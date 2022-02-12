@@ -54,6 +54,21 @@
                 const inputMaxLengthOnLoad = document.getElementById("inputNamaPanggilan").maxLength;
                 document.getElementById("sisaKarakter").innerText = inputMaxLengthOnLoad;
             });
+
+            document.getElementById("inputNamaPanggilan").addEventListener("input", function(){
+                const jumlahKarakterDiketik = document.getElementById("inputNamaPanggilan").value.length;
+                const jumlahKarakterMaksimal = document.getElementById("inputNamaPanggilan").maxLength;
+                console.log(jumlahKarakterDiketik, jumlahKarakterMaksimal);
+                const sisaKarakterUpdate = jumlahKarakterMaksimal - jumlahKarakterDiketik;
+                document.getElementById("sisaKarakter").innerText = sisaKarakterUpdate;
+                if (sisaKarakterUpdate == 0 ){
+                    document.getElementById("sisaKarakter").innerText = "batas maksimal tercapai!";
+                } else if(sisaKarakterUpdate <= 5){
+                    document.getElementById("notifikasiSisaKarakter").style.color = "red";
+                } else{
+                    document.getElementById("notifikasiSisaKarakter").style.color = "black";
+                }
+            });
         </script>
     </body>
 </html>
