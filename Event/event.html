@@ -27,6 +27,11 @@
        
         <script>
              // kita akan praktek di sini
+            function increment(){
+                document.getElementById("count").innerText++;
+            }
+            document.getElementById("incrementButton").onclick = increment;
+            
             function welcome(){
                 alert("Sim salabim muncullah elemen-elemen HTML!")
                     const contents = document.querySelector(".contents");
